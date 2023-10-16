@@ -1,0 +1,22 @@
+#include <Keyboard.h>
+
+const int buttonPin = 4;
+
+void setup() {
+ pinMode(buttonPin, INPUT_PULLUP);
+ Keyboard.begin();
+}
+
+void loop() { 
+  int buttonState = digitalRead(buttonPin); 
+  if ((buttonState)==LOW);  
+   delay(500);
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press("B");
+    Keyboard.releaseAll();
+    delay(1000);
+    Keyboard.press(KEY_TAB);
+    Keyboard.press(KEY_TAB);
+    Keyboard.print("Your YouTube channel");
+    Keyboard.println();
+    Keyboard.releaseAll();}
